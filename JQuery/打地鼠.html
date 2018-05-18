@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<style>
+    /* body {
+        background-image: url(./images/bg-dirt.png);
+    } */
+
+    td {
+        padding: 0px;
+    }
+
+    table {
+        margin: 140px 0 0 300px;
+        /* position: absolute; 絕對定位置中
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 1px;
+                height: 1px;
+                margin: auto; */
+    }
+
+    .mole {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        text-align: center;
+        background-image: url(./images/grass-upper.png);
+        background-repeat: no-repeat;
+        background-size: 120px 60px;
+        background-position: top 0;
+    }
+
+    .mole::after {
+        content: " ";
+        width: 120px;
+        height: 60px;
+        background-image: url(./images/grass-lower.png);
+        background-repeat: no-repeat;
+        background-size: 120px 60px;
+        background-position: top 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .mole::before {
+        content: " ";
+        width: 80px;
+        height: 80px;
+        background-image: url(./images/mole-laugh1.png);
+        background-repeat: no-repeat;
+        background-size: 80px 80px;
+        background-position: top 0;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        transition: all .1s;
+    }
+
+    .mole.active::before {
+        background-image: url(./images/mole-thump2.png);
+        top: 0px;
+        transition: all .1s;
+    }
+
+    .mole.hit::before {
+        background-image: url(./images/mole-thump4.png);
+        top: 40px;
+        transition: all 1s;
+    }
+</style>
+
+<body id="body" style="background-color: #00ddff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div id="player">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="mole"></div>
+                            </td>
+                            <td>
+                                <div class="mole"></div>
+                            </td>
+                            <td>
+                                <div class="mole"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mole"></div>
+                            </td>
+                            <td>
+                                <div class="mole"></div>
+                            </td>
+                            <td>
+                                <div class="mole"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mole"></div>
+                            </td>
+                            <td>
+                                <div class="mole"></div>
+                            </td>
+                            <td>
+                                <div class="mole"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="score" style="width: 250px;height: 50px;color: #00ddff;padding: 130px 0;font-size: 200%;text-align:left">score:</div>
+                    </div>
+                    <div class="col-3">
+                        <button id="start" type="button" class="btn btn-primary">開始</button>
+                    </div>
+                    <div class="col-6">
+                        <button id="close" type="button" class="btn btn-primary" style="text-align: left;">暫停</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            loop();
+            var timer = null,
+                score = 0;
+            var player = $("#player");
+            player.on("click", ".mole", function () {
+                var thismole = $(this);
+                if (thismole.is(".active")) {
+                    score += 10;
+                    $("#score").html("score: " + score);
+                    thismole.removeClass("active").removeClass("hit");
+                }
+            });
+
+            var start = $("#start");
+            start.on("click", function () {
+                nextMole();
+            });
+
+            var close = $("#close");
+            close.on("click", function () {
+                var moles = player.find(".mole");
+                moles.removeClass("active").removeClass("hit");
+                clearTimeout(timer);
+            });
+
+            function nextMole() {
+                var moles = player.find(".mole");
+                moles.removeClass("active").removeClass("hit");
+                for (var i = 0; i < 2; i++) {
+                    var next = Math.floor(Math.random() * moles.length);
+                    moles.eq(next).addClass("active");
+                }
+                timer = setTimeout(nextMole, 800);
+            }
+
+        });
+
+        loop = function () {
+            var rand = Math.floor(Math.random() * 900 + 100);
+            //console.log(rand);
+            setTimeout(function () {
+                doSomething();
+                loop();
+            }, rand);
+        };
+        doSomething = function () {
+            var randcolor = 'rgb(' + (Math.floor(Math.random() * 256)) + "," + (Math.floor(Math.random() * 256)) +
+                "," + (Math.floor(Math.random() * 256)) + ')';
+            $("#body").css("backgroundColor", randcolor);
+        };
+    </script>
+</body>
+
+</html>

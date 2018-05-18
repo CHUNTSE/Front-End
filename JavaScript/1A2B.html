@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>猜數字</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body style="border:1px solid #77ddff;margin:10px 80px">
+    <h2 class="mb-3 mt-3 text-center" style="color:#77ddff;text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,
+    0 0 0.2em #87F">1A2B</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <button type="button" name="" id="start" class="btn btn-primary btn-lg btn-block">開始遊戲</button>
+            </div>
+            <div class="col-4">
+                <button type="button" name="" id="ans" class="btn btn-success btn-lg btn-block">看答案</button>
+            </div>
+            <div class="col-4">
+                <button type="button" name="" id="ret" class="btn btn-default btn-lg btn-block">重新遊戲</button>
+            </div>
+        </div>
+    </div>
+    &nbsp;
+    <div class="container">
+        <div class="row">
+            <div class="col-10">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">請輸入四位數字</span>
+                    </div>
+                    <input id="input" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class="col-2">
+                <button type="button" name="" id="guess" class="btn btn-danger btn-md btn-block">猜</button>
+            </div>
+        </div>
+        &nbsp;
+        <div class="row">
+            <h3 class="ml-3">遊戲歷程</h3>
+            <div class="col-12">
+                <ul class="list-group" id="list">
+                </ul>
+                &nbsp;
+            </div>
+        </div>
+    </div>
+    <script>
+        var start = document.getElementById("start");
+        var rdmArray = [4];
+        var ansArray = [4];
+        var anum = 0, bnum = 0;
+        start.onclick = function () {
+            var exist = true;
+            for (i = 0; i < 4; i++) {
+                var rdm = 0;
+                do {
+                    exist = false;
+                    rdm = Math.floor(Math.random() * 10);
+                    if (rdm == 0) exist = true;
+                    if (rdmArray.indexOf(rdm) != -1) exist = true;
+                    //console.log("y" + rdm);
+                } while (exist);
+                rdmArray[i] = rdm;
+            }
+            var total = rdmArray[0] * 1000 + rdmArray[1] * 100 + rdmArray[2] * 10 + rdmArray[3];
+            var start = document.getElementById("ans");
+            ans.onclick = function () {
+                alert("答案:" + total);
+            }
+            console.log(rdmArray);
+            return rdmArray;
+        }
+
+        var ret = document.getElementById("ret");
+        ret.onclick = function () {
+            location.reload();
+        }
+
+        var guess = document.getElementById("guess");
+        guess.onclick = function () {
+            anum = 0;
+            bnum = 0;
+            if (document.getElementById("input").value.length == 4) {
+                var num = document.getElementById("input").value;
+                ansArray = Array.from(num);
+                var x = 0;
+                for (j = 0; j < 4; j++) {
+                    x = Number(num[j]);
+                    console.log(num[j]);
+                    if (rdmArray.indexOf(x) != -1) {
+                        bnum++;
+                    }
+                }
+                for (z = 0; z < 4; z++) {
+                    if (rdmArray[z] == num[z]) {
+                        console.log(rdmArray[z]);
+                        anum++;
+                    }
+                }
+                bnum = bnum - anum;
+                /*var newItem = document.createElement("LI");
+                var textnode = document.createTextNode(anum + "A" + bnum + "B");
+                newItem.appendChild(textnode);
+
+                var list = document.getElementById("myList");
+                list.insertBefore(newItem, list.childNodes[0]);*/
+                //document.getElementById("onepill").innerText = anum + "A" + bnum + "B";
+                /*var newItem = document.createElement("list-group-item");
+                var textnode = document.createTextNode(anum + "A" + bnum + "B");
+                newItem.appendChild(textnode);
+                document.getElementById("onepill").insertBefore(newItem, document.getElementById("onepill").childNodes[0]);
+                //document.getElementById("one").innerText = document.getElementById("input").value;*/
+                var list = document.getElementById("list");
+                var li = document.createElement("li");
+                var a1 = document.createElement("a");
+                if (anum == 4) {
+                    //document.getElementById("one").innerText = "恭喜通關";
+                    a1.className = "badge badge-pill badge-success";
+                    document.getElementById("guess").onclick = false;
+                    //document.getElementById("guess").style.backgroundColor = '#000000';
+                }
+                else {
+                    a1.className = "badge badge-pill badge-danger";
+                }
+                a1.href = "#";
+                a1.innerText = anum + "A" + bnum + "B";
+                console.log("a次數:" + anum);
+                console.log("b次數:" + bnum);//B
+                li.className = "list-group-item";
+                li.appendChild(a1);
+                li.innerHTML += document.getElementById("input").value;
+                list.appendChild(li);
+                list.insertBefore(li, list.childNodes[0]);
+            }
+            else {
+                alert("Error!");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

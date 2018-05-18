@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 style="color:#fff">
+                    <strong>終極密碼</strong>
+                </h1>
+            </div>
+            <div class="col-4">
+
+            </div>
+            <div class="col-4">
+                <div class="input-group mb-3">
+                    <input type="text" id="res" class="form-control" placeholder="輸入數字0~100" aria-label="Username" aria-describedby="basic-addon1"
+                        readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            &nbsp;
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="offset-3">
+
+            </div>
+            <div class="col-2 text-right">
+                <button type="button" id="numblock" class="btn btn-default num" style="border:2px solid #77DDFF">1</button>
+            </div>
+            <div class="col-2 text-center">
+                <button type="button" id="numblock" class="btn btn-default num" style="border:2px solid #77DDFF">2</button>
+            </div>
+            <div class="col-2">
+                <button type="button" id="numblock" class="btn btn-default num" style="border:2px solid #77DDFF">3</button>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="offset-3">
+
+            </div>
+            <div class="col-2 text-right">
+                <button type="button" id="numblock" class="btn btn-default num" style="border:2px solid #77DDFF">4</button>
+            </div>
+            <div class="col-2 text-center">
+                <button type="button" id="numblock" class="btn btn-default num" style="border:2px solid #77DDFF">5</button>
+            </div>
+            <div class="col-2">
+                <button type="button" id="numblock" class="btn btn-default num" style="border:2px solid #77DDFF">6</button>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="offset-3">
+
+            </div>
+            <div class="col-2 text-right">
+                <button type="button" id="numblock" class="btn btn-default num" style="border:2px solid #77DDFF">7</button>
+            </div>
+            <div class="col-2 text-center">
+                <button type="button" id="numblock" class="btn btn-default num" style="border:2px solid #77DDFF">8</button>
+            </div>
+            <div class="col-2">
+                <button type="button" id="numblock" class="btn btn-default num" style="border:2px solid #77DDFF">9</button>
+            </div>
+        </div>
+        <div id="lostDiv" class="row mb-3">
+            <div class="offset-3">
+
+            </div>
+            <div class="col-2 text-right">
+                <button type="button" id="cmdClen" class="btn btn-default" style="border:2px solid rgb(235, 5, 5)">X</button>
+            </div>
+            <div class="col-2 text-center">
+                <button type="button" id="numblock" class="btn btn-default num" style="border:2px solid #77DDFF">0</button>
+            </div>
+            <div class="col-2 ">
+                <button type="button" id="input" class="btn btn-default" style="border:2px solid rgb(2, 247, 2)">
+                    <</button>
+            </div>
+        </div>
+    </div>
+    <!--  <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+
+            </div>
+            <div class="col-3">
+
+            </div>
+            <div class="col-3">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+
+            </div>
+            <div class="col-3">
+
+            </div>
+            <div class="col-3">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+
+            </div>
+            <div class="col-3">
+
+            </div>
+            <div class="col-3">
+
+            </div>
+        </div>
+    </div>
+    <button class="num">1</button>
+    <button class="num">2</button>
+    <button class="num">3</button>
+    <button class="num">4</button>
+    <button class="num">5</button>
+    <button class="num">6</button>
+    <button class="num">7</button>
+    <button class="num">8</button>
+    <button class="num">9</button>
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //$("#res").val() += $("button[class='num']").text();
+        console.log($(".num").text());
+        var a = 0,
+            b = 100,
+            c = 0;
+        newnum = "";
+        var num = Math.floor(Math.random() * 100);
+        console.log(num);
+        var buttons = $(".num"); //document.getElementsByClassName("num");
+        console.log(buttons);
+        for (var i = 0; i < buttons.length; i++) {
+            var button = buttons[i];
+            // button.onclick = function () {
+            //     var btn = event.srcElement;
+
+            //     //newnum += btn.innerText;
+            //     // $("#res").val(newnum);
+            //     //document.getElementById("res").value += btn.innerText;
+            // }
+        }
+        $(".num").click(function () {
+            $("#res").val(newnum += $(this).text())
+        })
+
+        var cmdClen = $("#cmdClen")[0]; //document.getElementById("cmdClen");
+        cmdClen.onclick = function () {
+            $("#res").val(''); //document.getElementById("res").value = "";
+            $("#res").attr("placeholder", +a + "~" + b); //document.getElementById("res").setAttribute("placeholder", +a + "~" + b);
+        }
+
+        var input = $("#input")[0]; //document.getElementById("input");
+        input.onclick = function () {
+            newnum = "";
+            var peoplenum = $("#res").val(); //document.getElementById("res").value;
+            if (peoplenum >= a && peoplenum <= b && peoplenum != "") {
+                if (num > peoplenum) {
+                    a = peoplenum;
+                    $("#res").val(''); //document.getElementById("res").value = "";
+                    $("#res").attr("placeholder", +a + "~" + b); //document.getElementById("res").setAttribute("placeholder", +a + "~" + b);
+                    console.log("min:" + a);
+                }
+                if (num < peoplenum) {
+                    b = peoplenum;
+                    $("#res").val(''); //document.getElementById("res").value = "";
+                    $("#res").attr("placeholder", +a + "~" + b); //document.getElementById("res").setAttribute("placeholder", +a + "~" + b);
+                    console.log("max:" + b);
+                }
+                if (num == peoplenum) {
+                    $("#res").val(''); //document.getElementById("res").value = "";
+                    $("#res").attr("placeholder", "~~~~~終極密碼~~~~~"); //document.getElementById("res").setAttribute("placeholder", "~~~~~終極密碼~~~~~");
+                    $("#input").attr('disabled', true); //document.getElementById("input").onclick = false;
+                    $("#cmdClen").attr('disabled', true); //document.getElementById("cmdClen").onclick = false;
+                    $(".num").attr('disabled', true); //document.getElementById("numblock").onclick = false;
+                }
+            } else {
+                $("#res").val(''); //document.getElementById("res").value = "";
+                a = a;
+                b = b;
+                $("#res").attr("placeholder", a + "~" + b + "數字不再範圍內"); //document.getElementById("res").setAttribute("placeholder", a + "~" + b + "數字不再範圍內");
+            }
+        }
+    </script>
+</body>
+
+</html>

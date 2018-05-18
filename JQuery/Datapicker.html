@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/redmond/jquery-ui.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body id="body">
+    <p>Data:
+        <input type="text" id="datepicker" size="30">
+    </p>
+    <!-- <p>123:
+        <br>
+        <select id="anim">
+            <option value="show">Show (default)</option>
+            <option value="slideDown">Slide down</option>
+            <option value="fadeIn">Fade in</option>
+            <option value="bounce">抖抖抖</option>
+            <option value="clip">Clip (UI Effect)</option>
+            <option value="drop">Drop (UI Effect)</option>
+            <option value="fold">Fold (UI Effect)</option>
+            <option value="slide">Slide (UI Effect)</option>
+            <option value="">None</option>
+        </select>
+    </p> -->
+    <script>
+        $(function () {
+            loop();
+        });
+
+        loop = function () {
+            var rand = Math.floor(Math.random() * 900 + 100);
+            console.log(rand);
+            setTimeout(function () {
+                doSomething();
+                loop();
+            }, rand);
+        };
+        doSomething = function () {
+            var randcolor = 'rgb(' + (Math.floor(Math.random() * 256)) + "," + (Math.floor(Math.random() * 256)) +
+                "," + (Math.floor(Math.random() * 256)) + ')';
+            $("#body").css("backgroundColor", randcolor);
+        };
+        // var timepick = 0;  setInterval只會綁定一次所以要靠setTimeout不斷重新建立他
+        // window.setInterval(function () {
+        //     window.setTimeout(function () {
+        //         var randcolor = 'rgb(' + (Math.floor(Math.random() * 256)) + "," + (Math.floor(Math.random() *
+        //                 256)) +
+        //             "," + (Math.floor(Math.random() * 256)) + ')';
+        //         timepick = Math.floor(Math.random() * 900 + 100);
+        //         console.log(timepick);
+        //         $("#body").css("backgroundColor", randcolor);
+        //     }, timepick);
+        // }, 1000);
+        $(function () {
+            $("#datepicker").datepicker({
+                "dateFormat": "yy-MM-dd",
+                changeMonth: true,
+                changeYear: true,
+                showAnim: "bounce",
+                showOptions: {
+                    direction: "up", //展開方向
+                    opacity: 0.1 //不透明度
+                },
+                duration: "slow" //速度
+            });
+        });
+        // $("#anim").on("change", function () {                                      //anim改變的時候datepicker去找option裡面的showAnim:$(this).val()
+        //     $("#datepicker").datepicker("option", "showAnim", $(this).val());
+        // });
+    </script>
+</body>
+
+</html>

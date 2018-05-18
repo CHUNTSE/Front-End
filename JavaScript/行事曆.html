@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <style>
+        .btn {
+            width: 130px;
+            /*style="text-decoration:none;"*/
+        }
+
+        button {
+            overflow-x: auto;
+        }
+    </style>
+
+    <body style="padding:20px 100px">
+        <div class="container">
+            <div class="row mb-3 mt-2">
+                <div class="col" style="background:#00ddff;height:10px">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-2 text-center">
+                    <button onclick="butlef()" type="button" class="btn btn-lg btn-link" style="color:#00ddff">
+                        <i class="fa fa-caret-left" style="font-size:42px;"></i>
+                    </button>
+                </div>
+                <div class="col-7 text-center">
+                    <h1 id="txthead" style="color:#77ddff;text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,
+        0 0 0.2em #87F">2018 年 4 月</h1>
+                </div>
+                <div class="col-2 text-center">
+                    <button onclick="butrig()" type="button" class="btn btn-lg btn-link" style="color:#00ddff">
+                        <i class="fa fa-caret-right" style="font-size:42px;"></i>
+                    </button>
+                </div>
+                <div class="col-1 mt-2">
+                    <button id="button_add" style="color:#00ddff" type="button" class="btn btn-light" data-toggle="modal" data-target="#modelId">
+                        <i class="material-icons" style="font-size:30px;">playlist_add</i>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modelTitleId">今日行程</h4>
+                                    <button id="errorbutton" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">年分</span>
+                                        </div>
+                                        <input id="year" type="text" class="form-control" placeholder="幾年" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">月份</span>
+                                        </div>
+                                        <input id="month" type="text" class="form-control" placeholder="幾月" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">日期</span>
+                                        </div>
+                                        <input id="day" type="text" class="form-control" placeholder="幾日" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">幾點</span>
+                                        </div>
+                                        <input id="time" type="text" class="form-control" placeholder="24:00" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">行程</span>
+                                        </div>
+                                        <input id="thing" type="text" class="form-control" placeholder="Stroke" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">地點</span>
+                                        </div>
+                                        <input id="Location" type="text" class="form-control" placeholder="ex.新竹市..." aria-label="Username" aria-describedby="basic-addon1">
+                                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId2">
+                                            地圖
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button id="savebutton" type="button" class="btn btn-primary" data-dismiss="modal" style="margin-top:0px">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modelId1" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modelTitleId1">查看</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">年分</span>
+                                        </div>
+                                        <input id="year1" type="text" class="form-control" placeholder="幾年" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">月份</span>
+                                        </div>
+                                        <input id="month1" type="text" class="form-control" placeholder="幾月" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">日期</span>
+                                        </div>
+                                        <input id="day1" type="text" class="form-control" placeholder="幾日" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">幾點</span>
+                                        </div>
+                                        <input id="time1" type="text" class="form-control" placeholder="24:00" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">行程</span>
+                                        </div>
+                                        <input id="thing1" type="text" class="form-control" placeholder="Stroke" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <button id="markershow" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId2">
+                                            地圖
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="savenowthing" type="button" class="btn btn-primary" data-dismiss="modal" style="margin-top:0px">修改</button>
+                                    <button id="closenowthing" type="button" class="btn btn-secondary" data-dismiss="modal">刪除</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modelId2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modelTitleId">地圖</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="map" class="mapstyle" style="widows: 100%;height:300px"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="markercheck" type="button" class="btn btn-primary" data-dismiss="modal">確定</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3" style="color:#00ddff">
+                <div class="col text-center">
+                    SUN
+                </div>
+                <div class="col text-center">
+                    MON
+                </div>
+                <div class="col text-center">
+                    TUE
+                </div>
+                <div class="col text-center">
+                    WED
+                </div>
+                <div class="col text-center">
+                    THU
+                </div>
+                <div class="col text-center">
+                    FRI
+                </div>
+                <div class="col text-center">
+                    SAT
+                </div>
+            </div>
+            <div class="row mb-3" style="color:#00ddff">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+            </div>
+            <div class="row mb-3" style="color:#00ddff">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+            </div>
+            <div class="row mb-3" style="color:#00ddff">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+            </div>
+            <div class="row mb-3" style="color:#00ddff">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+            </div>
+            <div class="row mb-3" style="color:#00ddff">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+            </div>
+            <div class="row mb-3" style="color:#00ddff">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-link dayborder" style="height:100px;border:2px solid #00ddff"></button>
+                </div>
+            </div>
+        </div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6LtxJy1RiYp_yrSX5WpHoHNCmu08zB4o"></script>
+        <script>
+            var map = null;
+            var marker = null;
+            var center = {
+                lat: 24.7571075,
+                lng: 120.952429
+            };
+            var directionsService = null;
+            var directionsDisplay = null;
+
+            window.onload = function () {
+                map = new google.maps.Map(
+                    document.getElementById('map'), {
+                        center: center,
+                        zoom: 15,
+                    });
+                map.addListener('click', function (e) {
+                    //console.log(e);
+                    map.setCenter(e.latLng);
+                    if (marker != null) {
+                        marker.setMap(null);
+                        marker = null;
+                    }
+                    marker = new google.maps.Marker({
+                        position: e.latLng,
+                        map: map,
+                        icon: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-64.png',
+                        title: e.latLng.toString()
+                    });
+                    var place = document.getElementById("Location");
+                    place.value = e.latLng.lat() + "," + e.latLng.lng();
+                });
+            }
+
+            var marker_show = document.getElementById("markershow");
+            marker_show.onclick = function () {
+                var click = event.srcElement;
+                var time = document.getElementById("time1");
+                var thing = document.getElementById("thing1");
+                var model = document.getElementById("modelTitleId1");
+                var a = model.innerText.split("月");
+                var b = a[1].split("日");
+                //console.log(b);
+                for (var index of array) {
+                    if (index.Time == time.value && index.Word == thing.value && index.Days == b[0]) {
+                        if (marker != null) {
+                            marker.setMap(null);
+                            marker = null;
+                        }
+                        console.log(index);
+                        marker = new google.maps.Marker({
+                            position: index.location,
+                            map: map,
+                            title: index.address,
+                        });
+                    }
+                }
+            }
+
+
+            var Today = new Date();
+            var year = Today.getFullYear();
+            var month = Today.getMonth();
+            var array = [];
+
+            if (localStorage.arrays) {
+
+            } else {
+                var Array = JSON.stringify(array);
+                localStorage.setItem("arrays", Array);
+            }
+
+            function dele() { //清空版面
+                var gettitle = document.getElementsByClassName("dayborder");
+                for (var i = 0; i < gettitle.length; i++) {
+                    gettitle[i].innerText = "";
+                    gettitle[i].style.background = "";
+                    gettitle[i].style.color = "#4298e5";
+                }
+            }
+
+            function GetBlackMonthTime(now) { //這個月的上個月的日期
+                var gettitle = document.getElementsByClassName("dayborder");
+                var i = getMonthDays(year, month - 1);
+                while (now >= 0) {
+                    gettitle[now].innerText = i;
+                    gettitle[now].style.background = "#0e65b2";
+                    gettitle[now].id = i;
+                    now--;
+                    i--;
+                }
+            }
+
+            function GetNextMonthTime(now) { //這個月的下個月的日期
+                var gettitle = document.getElementsByClassName("dayborder");
+                var i = 1;
+                while (now < gettitle.length) {
+                    gettitle[now].innerText = i;
+                    gettitle[now].style.background = "#0e65b2";
+                    gettitle[now].id = i;
+                    now++;
+                    i++;
+                }
+            }
+
+            function GetMonthTime(firstday, monthday) { //取得這個月的日期並放進去button裡面
+                var gettitle = document.getElementsByClassName("dayborder");
+                GetBlackMonthTime(firstday - 1);
+                for (var i = 1; i <= monthday; i++) {
+                    var ul = document.createElement("ul");
+                    ul.className = "list-group";
+                    gettitle[firstday].innerText = i;
+                    gettitle[firstday].id = i;
+                    for (var item of array) {
+                        if (item.Year == year && item.Month == (month + 1) && item.Days == i) { //當日期一樣顯示事件
+                            var li = document.createElement("li");
+                            li.setAttribute("data-toggle", "modal");
+                            li.setAttribute("data-target", "#modelId1");
+                            li.innerHTML = item.Time + ":00 &nbsp;" + item.Thing;
+                            li.className = "small border-0";
+                            li.style = "font-size:50%";
+                            gettitle[firstday].appendChild(li);
+                        }
+                        // if (item.Year = year && item.Month == (month + 1) && i == new Date().getDate()) { //抓當天
+                        //     gettitle[firstday].style.backgroundColor = "#00DDFF";
+                        // } else {
+                        //     gettitle[firstday].style.backgroundColor = "white";
+                        // }
+                    }
+                    firstday++;
+                }
+                GetNextMonthTime(firstday);
+            }
+
+            function GetTime() { //取得現在時間
+                var arrays = localStorage.getItem("arrays");
+                array = JSON.parse(arrays);
+                dele();
+                year = Today.getFullYear();
+                month = Today.getMonth();
+                var getfirstday = getFirstDay(year, month);
+                var getmonthday = getMonthDays(year, month);
+                /* console.log(year);
+                      console.log(month);
+                      console.log(getfirstday);
+                      console.log(getmonthday);*/
+                GetMonthTime(getfirstday, getmonthday);
+                document.getElementById("txthead").innerHTML = year + "年" + (month + 1) + "月";
+                SetModelOnclick();
+            }
+
+            function SetModelOnclick() {
+                var li = document.getElementsByTagName("li");
+                for (var i = 0; i < li.length; i++) {
+                    var model = document.getElementById("modelTitleId1");
+                    var year1 = document.getElementById("year1");
+                    var month1 = document.getElementById("month1");
+                    var day1 = document.getElementById("day1");
+                    var time1 = document.getElementById("time1");
+                    var thing1 = document.getElementById("thing1");
+                    li[i].onclick = function () {
+                        ClearGroup();
+                        var thing = event.srcElement;
+                        var col = thing.parentNode;
+                        model.innerText = year + "年" + (month + 1) + "月" + col.id + "日";
+                        var s = thing.innerHTML;
+                        var word = s.split(":00 &nbsp;");
+                        time1.value = word[0];
+                        thing1.value = word[1];
+                        Change(thing);
+                        Deletotal(thing);
+                    }
+                }
+            }
+
+            function Change(thing) {
+                var nowthing = document.getElementById("savenowthing");
+                nowthing.onclick = function () {
+                    var year1 = document.getElementById("year1");
+                    var month1 = document.getElementById("month1");
+                    var day1 = document.getElementById("day1");
+                    var time1 = document.getElementById("time1");
+                    var thing1 = document.getElementById("thing1");
+                    var s = thing.innerHTML;
+                    var word = s.split(":00 &nbsp;");
+                    var col = thing.parentNode;
+                    for (var item of array) {
+                        if (item.Thing == word[1] && item.Time == word[0] && item.Days == col.id) {
+                            item.Year = year1.value;
+                            item.Month = month1.value;
+                            item.Days = day1.value;
+                            item.Time = time1.value;
+                            item.Thing == thing1.value;
+                            break;
+                        }
+                    }
+                    ClearGroup();
+                    var Array = JSON.stringify(array);
+                    localStorage.setItem("arrays", Array);
+                    GetTime();
+                }
+            }
+
+            function Deletotal(thing) {
+                var closething = document.getElementById("closenowthing");
+                closething.onclick = function () {
+                    var s = thing.innerHTML;
+                    var word = s.split(":00 &nbsp;");
+                    var col = thing.parentNode;
+                    for (var i = 0; i < array.length; i++) {
+                        if (array[i].Thing == word[1] && array[i].Time == word[0] && array[i].Days ==
+                            col.id) {
+                            array.splice(i, 1);
+                            break;
+                        }
+                    }
+                    var Array = JSON.stringify(array);
+                    localStorage.setItem("arrays", Array);
+                    ClearGroup();
+                    GetTime();
+                }
+            }
+
+            function ClearGroup() {
+                var year1 = document.getElementById("year1");
+                var month1 = document.getElementById("month1");
+                var day1 = document.getElementById("day1");
+                var time1 = document.getElementById("time1");
+                var thing1 = document.getElementById("thing1");
+                year1.value = "";
+                month1.value = "";
+                day1.value = "";
+                time1.value = "";
+                thing1.value = "";
+            }
+
+            function getFirstDay(year, month) { //取得這個月第一天是星期幾
+                var Firstdate = new Date(year, month, 1);
+                return Firstdate.getDay();
+            }
+
+            function getMonthDays(year, month) { //get這個月有幾個小時-3去削掉閏年的問題,用這個月有幾個小時,取得當月有幾天
+                var MonthDay = new Date(year, month + 1, 1);
+                MonthDay.setHours(MonthDay.getHours() - 3);
+                return MonthDay.getDate();
+            }
+
+            var btn_Save = document.getElementById("button_add");
+            btn_Save.onclick = function () { //新增資料事件
+                SaveDate();
+            }
+
+            function butrig() { //往右
+                Today = new Date(year, month + 1, 1)
+                GetTime();
+            }
+
+            function butlef() { //往左
+                Today = new Date(year, month - 1, 1)
+                GetTime();
+            }
+
+            function SaveDate() { //存資料
+                var savebutton = document.getElementById("savebutton");
+                savebutton.onclick = function () {
+                    var year = document.getElementById("year").value;
+                    var month = document.getElementById("month").value;
+                    var day = document.getElementById("day").value;
+                    var time = document.getElementById("time").value;
+                    var thing = document.getElementById("thing").value;
+                    var place = document.getElementById("Location");
+                    var w = place.value.split(",");
+                    var location = {
+                        lat: parseFloat(w[0]),
+                        lng: parseFloat(w[1])
+                    };
+                    var Data = {
+                        Year: year,
+                        Month: month,
+                        Days: day,
+                        Time: time,
+                        Thing: thing,
+                        address: place.value,
+                        location: location,
+                    };
+                    array.push(Data);
+                    var Array = JSON.stringify(array);
+                    localStorage.setItem("arrays", Array);
+                    console.log(localStorage.arrays);
+                    GetTime();
+                }
+            }
+            GetTime();
+        </script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>

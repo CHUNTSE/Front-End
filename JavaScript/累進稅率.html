@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-9 text-center">
+                <h3>稅額試算</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="txtNetIncome" class="col-2 col-form-label text-right">所得淨額</label>
+            <div class="input-group col-6">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        $</i>
+                    </div>
+                </div>
+                <input type="text" class="form-control" id="txtinput" />
+            </div>
+            <div class="col-1">
+                <button id="start" class="btn btn-primary">
+                    <i class="fas fa-calculator"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtTaxRate" class="col-3 col-form-label text-right">稅率</label>
+        <div class="input-group col-5">
+            <input type="text" class="form-control" readonly maxlength="5" id="txtrate" />
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    %</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtTaxAdjustment" class="col-3 col-form-label text-right">累進差額</label>
+        <div class="input-group col-5">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    $</i>
+                </div>
+            </div>
+            <input type="text" class="form-control" readonly id="txtjust" />
+        </div>
+    </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtTaxAmount" class="col-3 col-form-label text-right">應納稅額</label>
+        <div class="input-group col-5">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    $</i>
+                </div>
+            </div>
+            <input type="text" class="form-control" readonly id="txtAmount" />
+        </div>
+    </div>
+    </div>
+    </div>
+    <script>
+        /*方法1
+        var rate = function (x) {
+            if (x <= 540000) return 0.05;
+            if (x > 540000 && x <= 1210000) return 0.12;
+            if (x > 1210000 && x <= 2420000) return 0.2;
+            if (x > 2420000 && x <= 4530000) return 0.3;
+            if (x > 4530000 && x <= 10310000) return 0.4;
+
+            return 0.45;
+        }
+
+        var ratemoney = function (x) {
+            if (x <= 540000) return 0;
+            if (x > 540000 && x <= 1210000) return 37800;
+            if (x > 1210000 && x <= 2420000) return 134600;
+            if (x > 2420000 && x <= 4530000) return 376600;
+            if (x > 4530000 && x <= 10310000) return 829600;
+
+            return 1345100;
+        }
+
+        var start = document.getElementById("start");
+        start.onclick = function () {
+            //var savings = [437482, 609385, 938271, 1132785, 3090218, 6448293, 9938100, 10102837, 18902831];
+            var savings = document.getElementById("txtinput").value;
+            getRates(savings, rate);
+            function getRates(savings, rating) {
+                var rate = rating(savings);
+                var ratem = ratemoney(savings)
+                document.getElementById("txtrate").value = rate * 100;
+                document.getElementById("txtjust").value = ratem;
+                document.getElementById("txtAmount").value = (savings * rate - ratem).toFixed(0);
+            }
+        }*/
+
+        //方法2
+        var taxArray = [
+            { rate: 0.05, amountF: 0, amountT: 540000, gap: 0 },
+            { rate: 0.12, amountF: 540000, amountT: 1210000, gap: 37800 },
+            { rate: 0.20, amountF: 1210000, amountT: 2420000, gap: 134600 },
+            { rate: 0.30, amountF: 2420000, amountT: 4530000, gap: 376000 },
+            { rate: 0.40, amountF: 4530000, amountT: 10310000, gap: 829600 },
+            { rate: 0.45, amountF: 10310000, amountT: 0, gap: 1345100 }
+        ];
+        var start = document.getElementById("start");
+        start.onclick = function () {
+            var savings = document.getElementById("txtinput").value;
+            for (var item of taxArray) {
+                if (item.amountF > item.amountT) {
+                    if (savings >= item.amountF) {
+                        r = item.rate;
+                        g = item.gap;
+                        break;
+                    }
+                    else {
+                        r = -1;
+                        g = -1;
+                        break;
+                    }
+                }
+                else {
+                    if (savings >= item.amountF && savings < item.amountT) {
+                        r = item.rate;
+                        g = item.gap;
+                        break;
+                    }
+                }
+            }
+            document.getElementById("txtrate").value = r * 100;
+            document.getElementById("txtjust").value = g;
+            document.getElementById("txtAmount").value = (savings * r - g).toFixed(0);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/redmond/jquery-ui.min.css">
+</head>
+
+<body>
+    <ol id="sortable">
+
+    </ol>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $.ajax({
+            url: "http://opendata.hccg.gov.tw/dataset/0ada783d-f3ac-4d0d-9344-955fd7438cd8/resource/508e6209-b1b3-494d-9469-9cf8831eaf80/download/20180314164845937.json",
+            type: "GET"
+        }).done(function (data) {
+            for (var item of data) {
+                console.log(item);
+                $("#sortable").append($("<li class=\"ui-state-default\">").text(item.機構名稱 + "    電話:" + item.機構電話 +
+                    "      狀態:" + item.狀態));
+                //$("#sortable li").draggable();
+            }
+            $("ol").sortable();
+            $("ol").disableSelection();
+            $("#sortable li").click(function () {
+                $(this).toggle(1000);
+            });
+        });
+    </script>
+</body>
+
+</html>
