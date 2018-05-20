@@ -24,7 +24,8 @@
 
     <!-- Material Design Bootstrap -->
     <!--<link href="css/progressbar.css" rel="stylesheet">-->
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
 
@@ -35,6 +36,96 @@
     <link href="css/responsive.css" rel="stylesheet">
 
 </head>
+<style type="text/css">
+    .ulbox {
+        -webkit-animation: run 6s linear infinite;
+        animation: run 6s linear infinite;
+        height: 100%;
+        position: absolute;
+        -webkit-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        width: 100%;
+    }
+
+    .ulbox * {
+        background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px);
+        -webkit-background-size: 2.5em 2.5em, 2.5em 2.5em;
+        background-size: 2.5em 2.5em, 2.5em 2.5em;
+
+        background-color: rgba(100, 237, 255, 0.261);
+        border: 2px solid rgba(54, 226, 248, 0.5);
+
+        /* <span style="white-space:pre"></span>-webkit-box-shadow: 0 0 5em rgba(0, 128, 0, 0.4); */
+        box-shadow: 0 0 12em rgba(64, 128, 0, 0.4);
+        display: block;
+        position: absolute;
+        height: 400px;
+        width: 400px;
+    }
+
+    .libox1 {
+        -webkit-transform: rotateX(180deg) translateZ(200px);
+        -ms-transform: rotateX(180deg) translateZ(200px);
+        transform: rotateX(180deg) translateZ(200px);
+    }
+
+    .libox2 {
+        -webkit-transform: rotateX(-90deg) translateZ(200px);
+        -ms-transform: rotateX(-90deg) translateZ(200px);
+        transform: rotateX(-90deg) translateZ(200px);
+    }
+
+    .libox3 {
+        -webkit-transform: rotateY(0deg) translateZ(200px);
+        -ms-transform: rotateY(0deg) translateZ(200px);
+        transform: rotateY(0deg) translateZ(200px);
+    }
+
+    .libox4 {
+        -webkit-transform: rotateY(-90deg) translateZ(200px);
+        -ms-transform: rotateY(-90deg) translateZ(200px);
+        transform: rotateY(-90deg) translateZ(200px);
+    }
+
+    .libox5 {
+        -webkit-transform: rotateY(90deg) translateZ(200px);
+        -ms-transform: rotateY(90deg) translateZ(200px);
+        transform: rotateY(90deg) translateZ(200px);
+    }
+
+    .libox6 {
+        -webkit-transform: rotateX(90deg) translateZ(200px);
+        -ms-transform: rotateX(90deg) translateZ(200px);
+        transform: rotateX(90deg) translateZ(200px);
+    }
+
+
+    @-webkit-keyframes run {
+        from {
+            -webkit-transform: translateZ(-200px) rotateX(0) rotateY(0deg);
+            transform: translateZ(-200px) rotateX(0) rotateY(0deg);
+        }
+
+        to {
+            -webkit-transform: translateZ(-200px) rotateX(360deg) rotateY(360deg);
+            transform: translateZ(-200px) rotateX(360deg) rotateY(360deg);
+        }
+    }
+
+    @keyframes run {
+        from {
+            -webkit-transform: translateZ(-200px) rotateX(0) rotateY(0deg);
+            transform: translateZ(-200px) rotateX(0) rotateY(0deg);
+        }
+
+        to {
+            -webkit-transform: translateZ(-200px) rotateX(360deg) rotateY(360deg);
+            transform: translateZ(-200px) rotateX(360deg) rotateY(360deg);
+        }
+    }
+</style>
 
 <body data-spy="scroll" data-target=".navbar-desktop">
     <!-- Start your project here-->
@@ -44,7 +135,7 @@
         <div class='loaded'>&nbsp;</div>
     </div>
 
-    <nav class="navbar navbar-light bg-faded">
+    <nav class="navbar navbar-light" style="padding: 0 0;background-color: #000">
         <!--Collapse button-->
         <div class="container">
             <a href="#" data-activates="mobile-menu" class="button-collapse right">
@@ -75,7 +166,7 @@
 
                     </li>
                     <li class="nav-item">
-                        <img width="380px;" height="70px;" src="img/iamlogo.gif" alt="" />
+                        <img width="380px;" height="70px;" src="img/iamlogoblock.gif" alt="" />
                     </li>
                     <li class="nav-item">
                         <img width="80px;" height="78px;" src="img/team4.jpg" alt="" />
@@ -140,8 +231,8 @@
                 <!-- random image -->
                 <div class="caption center-align">
                     <div class="single_home">
-                        <h1 style="color: #C0C0C0">Impossible</h1>
-                        <p style="color: #C0C0C0">The Word Impossible Is Not In My Dictionary</p>
+                        <h1 style="color: #2F4F4F">Impossible</h1>
+                        <p style="color: #2F4F4F">The Word Impossible Is Not In My Dictionary</p>
                     </div>
                 </div>
             </li>
@@ -156,7 +247,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/Fly.webp">
+                <img src="img/Fly.jpeg">
                 <!-- random image -->
                 <div class="caption center-align">
                     <div class="single_home">
@@ -178,13 +269,25 @@
     <section id="about" class="about">
         <div class="container">
             <div class="row">
+                <!-- 3D -->
+                <div class="col-12">
+                    <ul class="ulbox">
+                        <li class="libox1"></li>
+                        <li class="libox2"></li>
+                        <li class="libox3"></li>
+                        <li class="libox4"></li>
+                        <li class="libox5"></li>
+                        <li class="libox6"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-12">
                     <div class="main_about_area">
                         <div class="head_title center m-y-3 wow fadeInUp">
                             <h2>Who am i</h2>
                             <p>Junior Software Engineer who focuses on writing clean and efficient code.</p>
                         </div>
-
                         <div class="main_about_content">
                             <div class="row">
                                 <div class="col-md-6">
@@ -192,29 +295,27 @@
                                     <div class="main_accordion wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
 
                                         <div class="single_accordion">
-                                            <button class="accordion active">Bootstrap分析</button>
+                                            <button class="accordion active">Bootstrap網頁分析</button>
                                             <div class="panel show">
                                                 <p>Bootstrap 是個很強大的開發工具平台，也是因為如此而特別喜歡使用它，在Build School 軟體開發培訓下， 讓我更了解前端的概念。</p>
                                             </div>
                                         </div>
 
                                         <div class="single_accordion">
-                                            <button class="accordion">Lorem ipsum dolor sit amet</button>
+                                            <button class="accordion">CSS/HTML</button>
                                             <div class="panel">
-                                                <p>Consectetur adipiscing elit. Aliquam sagittis nulla non elit dignissim suscipit.
-                                                    Duis lorem nulla, eleifend Ut urna dui, interdum non blandit sed, hendrerit
-                                                    ultricies mi. Aliquam at scelerisque ligula. Curabitur id laoreet velit.</p>
+                                                <p>CSS/HTML 簡單的程式碼,卻能造出許多不一樣的特效,像是會轉動的3D魔術方塊或是會流動的瀑布,也因為這樣的多樣性,讓我想更了解每個特性的創作方式</p>
                                             </div>
                                         </div>
 
-                                        <div class="single_accordion">
+                                        <!-- <div class="single_accordion">
                                             <button class="accordion">Lorem ipsum dolor sit amet</button>
                                             <div class="panel">
                                                 <p>Consectetur adipiscing elit. Aliquam sagittis nulla non elit dignissim suscipit.
                                                     Duis lorem nulla, eleifend Ut urna dui, interdum non blandit sed, hendrerit
                                                     ultricies mi. Aliquam at scelerisque ligula. Curabitur id laoreet velit.</p>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
@@ -276,54 +377,55 @@
                 <div class="col-sm-12">
                     <div class="main_service_area">
                         <div class="head_title center m-y-3 wow fadeInUp">
-                            <h2>Our Service</h2>
+                            <h2>My website</h2>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="jumbotron single_service  wow fadeInLeft">
                                     <div class="service_icon center">
-                                        <i class="fa fa-cog m-b-3"></i>
+                                        <i class="fab fa-github m-b-3"></i>
                                     </div>
                                     <div class="s_service_text text-sm-center text-xs-center">
-                                        <h4>Free support&updates</h4>
-                                        <p>Lorem ipsum dolor sit amet, conse tetuer adipiscing elit, sed diam nonu my nibh euismod
-                                            tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                        <strong style="font-size: 160%">GitHub</strong>
+                                        <p style="margin:20px 0 0 0">Junior Software Engineer's Portfolio Site</p>
                                     </div>
 
-                                    <div class="service_btn center">
-                                        <a href="#!" class="btn btn-danger waves-effect waves-red">See More</a>
+                                    <div class="service_btn center" style="
+                                    padding-top: 75px;">
+                                        <a href="https://github.com/CHUNTSE" class="btn btn-danger waves-effect waves-red" target="_blank">See More</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="jumbotron single_service wow fadeInUp">
                                     <div class="service_icon center">
-                                        <i class="fa fa-pied-piper m-b-3"></i>
+                                        <i class="fab fa-facebook m-b-3"></i>
                                     </div>
                                     <div class="s_service_text text-sm-center text-xs-center">
-                                        <h4>Fully customizable</h4>
-                                        <p>Lorem ipsum dolor sit amet, conse tetuer adipiscing elit, sed diam nonu my nibh euismod
-                                            tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                        <strong style="font-size: 160%">Facebook</strong>
+                                        <p style="margin:20px 0 0 0">My social networking site</p>
+                                        <p>There is a bit of my ordinary life</p>
                                     </div>
 
-                                    <div class="service_btn center">
-                                        <a href="#!" class="btn btn-danger waves-effect waves-red">See More</a>
+                                    <div class="service_btn center" style="
+                                    padding-top: 29px;">
+                                        <a href="https://www.facebook.com/profile.php?id=100003127171617" class="btn btn-danger waves-effect waves-red" target="_blank">See More</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="jumbotron single_service wow fadeInRight">
                                     <div class="service_icon center">
-                                        <i class="fa fa-plug m-b-3"></i>
+                                        <img width="47px" height="55px" src="img/build.png" class="m-b-3">
                                     </div>
                                     <div class="s_service_text text-sm-center  text-xs-center">
-                                        <h4>12 themE websites</h4>
-                                        <p>Lorem ipsum dolor sit amet, conse tetuer adipiscing elit, sed diam nonu my nibh euismod
-                                            tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                        <strong style="font-size: 160%">Build School</strong>
+                                        <p style="margin:20px 0 20px 0">Build School is the pioneer of software development education, creating a more competitive
+                                            career for students</p>
                                     </div>
 
                                     <div class="service_btn center">
-                                        <a href="#!" class="btn btn-danger waves-effect waves-red">See More</a>
+                                        <a href="https://www.build-school.com" class="btn btn-danger waves-effect waves-red" target="_blank">See More</a>
                                     </div>
                                 </div>
                             </div>
@@ -338,7 +440,7 @@
 
 
 
-    <section id="joinus" class="joinus">
+    <!--加入我們 <section id="joinus" class="joinus">
         <div class="main_joinus_area m-y-3">
             <div class="container">
                 <div class="row">
@@ -356,13 +458,13 @@
             </div>
         </div>
         <hr />
-    </section>
+    </section> -->
     <!-- End of JoinUs section -->
 
 
 
 
-    <section id="offer" class="offer">
+    <!-- 我們能提供什麼<section id="offer" class="offer">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -447,194 +549,8 @@
             </div>
         </div>
         <hr />
-    </section>
-    <!-- End of Offer Section -->
+    </section> -->
 
-    <section id="client" class="client">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="main_client_area">
-                        <div class="head_title center m-y-3 wow fadeInUp">
-                            <h2>CUSTOMER REVIEWS</h2>
-                        </div>
-                        <div class="main_client_content m-b-3">
-
-                            <div class="carousel carousel-slider">
-                                <div class="carousel-item">
-                                    <div class="single_client_area">
-                                        <div class="single_client">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="single_c_img center">
-                                                        <img class="img-circle" src="img/client1.jpg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="single_c_text text-md-left text-xs-center">
-                                                        <h3>Ejazul islam</h3>
-                                                        <span class="text-uppercase m-b-1">Ejazul islam</span>
-                                                        <p>“ Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                            industry. Lorem Ipsum has been the industry's standard dummy
-                                                            text ever since the 1500s”.......</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single_client">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="single_c_img center">
-                                                        <img class="img-circle" src="img/client2.jpg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="single_c_text text-md-left text-xs-center">
-                                                        <h3>Iqball Hossain</h3>
-                                                        <span class="text-uppercase m-b-1">Psd at koitor bidda</span>
-                                                        <p>“ Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                            industry. Lorem Ipsum has been the industry's standard dummy
-                                                            text ever since the 1500s”.......</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End of carouser item -->
-                                <div class="carousel-item">
-                                    <div class="single_client_area">
-                                        <div class="single_client">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="single_c_img center">
-                                                        <img class="img-circle" src="img/client1.jpg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="single_c_text text-md-left text-xs-center">
-                                                        <h3>Ejazul islam</h3>
-                                                        <span class="text-uppercase m-b-1">Ejazul islam</span>
-                                                        <p>“ Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                            industry. Lorem Ipsum has been the industry's standard dummy
-                                                            text ever since the 1500s”.......</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single_client">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="single_c_img center">
-                                                        <img class="img-circle" src="img/client2.jpg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="single_c_text text-md-left text-xs-center">
-                                                        <h3>Iqball Hossain</h3>
-                                                        <span class="text-uppercase m-b-1">Psd at koitor bidda</span>
-                                                        <p>“ Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                            industry. Lorem Ipsum has been the industry's standard dummy
-                                                            text ever since the 1500s”.......</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End of carouser item -->
-                                <div class="carousel-item">
-                                    <div class="single_client_area">
-                                        <div class="single_client">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="single_c_img center">
-                                                        <img class="img-circle" src="img/client1.jpg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="single_c_text text-md-left text-xs-center">
-                                                        <h3>Ejazul islam</h3>
-                                                        <span class="text-uppercase m-b-1">Ejazul islam</span>
-                                                        <p>“ Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                            industry. Lorem Ipsum has been the industry's standard dummy
-                                                            text ever since the 1500s”.......</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single_client">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="single_c_img center">
-                                                        <img class="img-circle" src="img/client2.jpg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="single_c_text text-md-left text-xs-center">
-                                                        <h3>Iqball Hossain</h3>
-                                                        <span class="text-uppercase m-b-1">Psd at koitor bidda</span>
-                                                        <p>“ Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                            industry. Lorem Ipsum has been the industry's standard dummy
-                                                            text ever since the 1500s”.......</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End of carouser item -->
-                                <div class="carousel-item">
-                                    <div class="single_client_area">
-                                        <div class="single_client">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="single_c_img center">
-                                                        <img class="img-circle" src="img/client1.jpg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="single_c_text text-md-left text-xs-center">
-                                                        <h3>Ejazul islam</h3>
-                                                        <span class="text-uppercase m-b-1">Ejazul islam</span>
-                                                        <p>“ Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                            industry. Lorem Ipsum has been the industry's standard dummy
-                                                            text ever since the 1500s”.......</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single_client">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="single_c_img center">
-                                                        <img class="img-circle" src="img/client2.jpg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="single_c_text text-md-left text-xs-center">
-                                                        <h3>Iqball Hossain</h3>
-                                                        <span class="text-uppercase m-b-1">Psd at koitor bidda</span>
-                                                        <p>“ Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                            industry. Lorem Ipsum has been the industry's standard dummy
-                                                            text ever since the 1500s”.......</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End of carouser item -->
-                            </div>
-                            <!-- End of carouser slider -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr />
-    </section>
-    <!-- End of client Section -->
 
 
     <section id="counter" class="counter">
@@ -652,24 +568,24 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="single_counter p-y-2 m-t-1">
+                                <div class="single_counter m-t-1" style="padding: 27px 0 1px 0">
                                     <i class="fa fa-check m-b-1"></i>
-                                    <h2 class="statistic-counter">400</h2>
-                                    <p>Check Our</p>
+                                    <h2 class="statistic-counter">2500</h2>
+                                    <p>BuildSchool Software Development Training Time</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="single_counter p-y-2 m-t-1">
                                     <i class="fa fa-refresh m-b-1"></i>
-                                    <h2 class="statistic-counter">312</h2>
-                                    <p>repeat client</p>
+                                    <h2 class="statistic-counter">101</h2>
+                                    <p>Practice score</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="single_counter p-y-2 m-t-1">
                                     <i class="fa fa-beer m-b-1"></i>
-                                    <h2 class="statistic-counter">480</h2>
-                                    <p>Pizzas Ordered</p>
+                                    <h2 class="statistic-counter">4</h2>
+                                    <p>Teamwork</p>
                                 </div>
                             </div>
                         </div>
@@ -683,7 +599,7 @@
 
 
 
-    <section id="team" class="team">
+    <!-- <section id="team" class="team">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -800,7 +716,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End of col-sm-3 -->
+
                             </div>
                         </div>
                     </div>
@@ -808,7 +724,7 @@
             </div>
         </div>
         <hr />
-    </section>
+    </section> -->
     <!-- End of Team section -->
 
 
@@ -817,32 +733,28 @@
             <div class="row">
                 <div class="main_portfolio_area m-y-3">
                     <div class="head_title center wow fadeInUp">
-                        <h2>Our Awesome Works</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus
-                            malesuada facilisis.Lorem ipsum dolor sit amet, consectetur facilisis.</p>
+                        <h2>My Awesome Works</h2>
+                        <p>Junior Software Engineer's Portfolio</p>
                     </div>
 
                     <div class="main_portfolio_content center wow fadeInUp">
                         <div class="main_mix_menu m-y-2">
                             <ul class="text-uppercase">
-                                <li class="filter" data-filter="all">All</li>
-                                <li class="filter" data-filter=".cat1">Photography</li>
-                                <li class="filter" data-filter=".cat2">Graphic</li>
-                                <li class="filter" data-filter=".cat3">Print</li>
-                                <li class="filter" data-filter=".cat4">Web</li>
+                                <li class="filter p-x-3" data-filter="all">All</li>
+                                <li class="filter p-x-3" data-filter=".cat1">CSS/HTML</li>
+                                <li class="filter p-x-3" data-filter=".cat2" style="text-transform: capitalize">Visual Studio</li>
+                                <li class="filter p-x-3" data-filter=".cat3" style="text-transform: capitalize">JavaScript</li>
+                                <li class="filter p-x-3" data-filter=".cat4" style="text-transform: capitalize">JQuery</li>
                             </ul>
                         </div>
 
                         <div id="mixcontent" class="mixcontent  wow zoomIn">
-                            <div class="col-md-4 mix cat4 cat2">
+                            <div class="col-md-4 mix cat2">
                                 <div class="single_mixi_portfolio center">
                                     <div class="single_portfolio_img">
-                                        <img src="img/pf1.jpg" alt="" />
+                                        <img src="img/Monopoly.jpg" alt="" />
                                         <div class="mixi_portfolio_overlay">
-                                            <a href="#!">
-                                                <i class="fa fa-search"></i>
-                                            </a>
-                                            <a href="img/pf1.jpg" class="gallery-img">
+                                            <a href="img/Monopoly.jpg" class="gallery-img">
                                                 <i class="fa fa-link"></i>
                                             </a>
                                         </div>
@@ -856,12 +768,12 @@
                             <div class="col-md-4 mix cat4 cat1">
                                 <div class="single_mixi_portfolio center">
                                     <div class="single_portfolio_img">
-                                        <img src="img/pf2.jpg" alt="" />
+                                        <img src="img/buildschool.jpg" alt="" />
                                         <div class="mixi_portfolio_overlay">
                                             <a href="#!">
                                                 <i class="fa fa-search"></i>
                                             </a>
-                                            <a href="img/pf2.jpg" class="gallery-img">
+                                            <a href="img/buildschool.jpg" class="gallery-img">
                                                 <i class="fa fa-link"></i>
                                             </a>
                                         </div>
