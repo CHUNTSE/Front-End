@@ -38,8 +38,8 @@
 </head>
 <style type="text/css">
     .ulbox {
-        -webkit-animation: run 6s linear infinite;
-        animation: run 6s linear infinite;
+        -webkit-animation: run 4s linear infinite;
+        animation: run 4s linear infinite;
         height: 100%;
         position: absolute;
         -webkit-transform-style: preserve-3d;
@@ -124,6 +124,22 @@
             -webkit-transform: translateZ(-200px) rotateX(360deg) rotateY(360deg);
             transform: translateZ(-200px) rotateX(360deg) rotateY(360deg);
         }
+    }
+
+    h3.capitalize {
+        text-transform: capitalize;
+    }
+
+    .threeD {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        left: 40%;
+        top: 20%;
+    }
+
+    .tit {
+        font-family: fantasy;
     }
 </style>
 
@@ -214,25 +230,16 @@
     <div id="home" class="slider">
         <ul class="slides">
             <li>
-                <img src="img/homebenner.jpg">
+                <img src="img/strength.png">
                 <!-- random image -->
-                <div class="caption center-align">
-                    <div class="single_home">
-                        <h1>ADVENTURER</h1>
-                        <p>MURI, A TEMPLATE AT THE HEART OF THE BEAUTY</p>
-                        <a href="https://github.com/CHUNTSE" target="_blank">
-                            <button type="button" class="btn btn-secondary m-t-3 waves-effect waves-red">GitHub</button>
-                        </a>
-                    </div>
-                </div>
             </li>
             <li>
                 <img src="img/possible.jpeg">
                 <!-- random image -->
                 <div class="caption center-align">
                     <div class="single_home">
-                        <h1 style="color: #2F4F4F">Impossible</h1>
-                        <p style="color: #2F4F4F">The Word Impossible Is Not In My Dictionary</p>
+                        <h2 class="tit" style="color: #444444;font-size: 380%;text-transform: capitalize;widows: 1100px;margin-bottom: 20px;">The Word ImpossibleIs Not In My</h2>
+                        <h2 class="tit" style="color: #444444;font-size: 350%;text-transform: capitalize;width: 1100px;">Dictionary</h2>
                     </div>
                 </div>
             </li>
@@ -241,8 +248,11 @@
                 <!-- random image -->
                 <div class="caption center-align">
                     <div class="single_home">
-                        <h1 style="color: #C0C0C0">ADVENTURER</h1>
-                        <p>MURI, A TEMPLATE AT THE HEART OF THE BEAUTY</p>
+                        <h2 class="tit" style="font-size: 380%;color: #C0C0C0;widows: 1100px;margin-bottom: 20px;">If you train hard, you'll not only
+                        </h2>
+                        <h2 class="tit" style="font-size: 380%;color: #C0C0C0;width: 1100px;">be hard, you'll be hard to beat
+                        </h2>
+
                     </div>
                 </div>
             </li>
@@ -251,33 +261,26 @@
                 <!-- random image -->
                 <div class="caption center-align">
                     <div class="single_home">
-                        <h1>ADVENTURER</h1>
-                        <p>The higher the wall, the stronger you become</p>
-                        <p>when you turn it over</p>
+                        <h2 class="tit" style="font-size: 380%;text-transform: capitalize;margin-bottom: 20px;width: 1100px;">The higher the wall, the stronger you</h2>
+                        <h2 class="tit" style="font-size: 380%;text-transform: capitalize">become when you turn it over</h2>
                     </div>
                 </div>
             </li>
         </ul>
     </div>
 
-
-
-
-
-
-
     <section id="about" class="about">
         <div class="container">
             <div class="row">
                 <!-- 3D -->
-                <div class="col-12">
-                    <ul class="ulbox">
-                        <li class="libox1"></li>
-                        <li class="libox2"></li>
-                        <li class="libox3"></li>
-                        <li class="libox4"></li>
-                        <li class="libox5"></li>
-                        <li class="libox6"></li>
+                <div class="col-12" style="width:1000px;height: 10px;margin-top: 150px;">
+                    <ul class="ulbox threeD">
+                        <li class="libox1" style="background-color:#FF0000"></li>
+                        <li class="libox2" style="background-color:#FF00FF"></li>
+                        <li class="libox3" style="background-color:#FFFF00"></li>
+                        <li class="libox4" style="background-color:#00CED1"></li>
+                        <li class="libox5" style="background-color:#00FF00"></li>
+                        <li class="libox6" style="background-color:#00FF7F"></li>
                     </ul>
                 </div>
             </div>
@@ -324,32 +327,32 @@
                                         <div class="skill wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
                                             <!-- progress start -->
                                             <div class="progress">
-                                                <div class="lead">Bootstrap 80%</div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="80%" style="width: 80%;" data-wow-duration="1.5s" data-wow-delay="1.2s"></div>
+                                                <div class="lead">Bootstrap</div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="92%" style="width: 92%;" data-wow-duration="1.5s" data-wow-delay="1.2s"></div>
                                             </div>
                                             <!-- progress end -->
                                             <!-- progress start -->
                                             <div class="progress">
-                                                <div class="lead">CSS/HTML 85%</div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="85%" style="width: 85%;" data-wow-duration="1.5s" data-wow-delay="1.2s"></div>
+                                                <div class="lead">CSS/HTML</div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="90%" style="width: 90%;" data-wow-duration="1.5s" data-wow-delay="1.2s"></div>
                                             </div>
                                             <!-- progress end -->
                                             <!-- progress start -->
                                             <div class="progress">
-                                                <div class="lead">Java 40%</div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="40%" style="width: 40%;" data-wow-duration="1.5s" data-wow-delay="1.2s"></div>
-                                            </div>
-                                            <!-- progress end -->
-                                            <!-- progress start -->
-                                            <div class="progress">
-                                                <div class="lead">C# 60%</div>
+                                                <div class="lead">Java</div>
                                                 <div class="progress-bar wow fadeInLeft" data-progress="60%" style="width: 60%;" data-wow-duration="1.5s" data-wow-delay="1.2s"></div>
                                             </div>
                                             <!-- progress end -->
                                             <!-- progress start -->
                                             <div class="progress">
-                                                <div class="lead">JavaScript 50%</div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="50%" style="width: 50%;" data-wow-duration="1.5s" data-wow-delay="1.2s"></div>
+                                                <div class="lead">C#</div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="70%" style="width: 70%;" data-wow-duration="1.5s" data-wow-delay="1.2s"></div>
+                                            </div>
+                                            <!-- progress end -->
+                                            <!-- progress start -->
+                                            <div class="progress">
+                                                <div class="lead">JavaScript</div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="75%" style="width: 75%;" data-wow-duration="1.5s" data-wow-delay="1.2s"></div>
                                             </div>
                                             <!-- PROGRESS END -->
                                         </div>
@@ -570,7 +573,7 @@
                             <div class="col-md-3">
                                 <div class="single_counter m-t-1" style="padding: 27px 0 1px 0">
                                     <i class="fa fa-check m-b-1"></i>
-                                    <h2 class="statistic-counter">2500</h2>
+                                    <h2 class="statistic-counter">1000</h2>
                                     <p>BuildSchool Software Development Training Time</p>
                                 </div>
                             </div>
@@ -742,9 +745,9 @@
                             <ul class="text-uppercase">
                                 <li class="filter p-x-3" data-filter="all">All</li>
                                 <li class="filter p-x-3" data-filter=".cat1">CSS/HTML</li>
-                                <li class="filter p-x-3" data-filter=".cat2" style="text-transform: capitalize">Visual Studio</li>
-                                <li class="filter p-x-3" data-filter=".cat3" style="text-transform: capitalize">JavaScript</li>
-                                <li class="filter p-x-3" data-filter=".cat4" style="text-transform: capitalize">JQuery</li>
+                                <li class="filter p-x-3" data-filter=".cat2" style="text-transform: capitalize">C#</li>
+                                <li class="filter p-x-3" data-filter=".cat3" style="text-transform: capitalize">JavaScript/JQuery</li>
+                                <!-- <li class="filter p-x-3" data-filter=".cat4" style="text-transform: capitalize"></li> -->
                             </ul>
                         </div>
 
@@ -755,13 +758,13 @@
                                         <img src="img/Monopoly.jpg" alt="" />
                                         <div class="mixi_portfolio_overlay">
                                             <a href="img/Monopoly.jpg" class="gallery-img">
-                                                <i class="fa fa-link"></i>
+                                                <i class="fa fa-search"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="single_portfolio_text">
-                                        <h3>Our Work Image 06</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <h3>大富翁</h3>
+                                        <p>腳色在格子上移動並能觸發事件</p>
                                     </div>
                                 </div>
                             </div>
@@ -770,112 +773,113 @@
                                     <div class="single_portfolio_img">
                                         <img src="img/buildschool.jpg" alt="" />
                                         <div class="mixi_portfolio_overlay">
-                                            <a href="https://buildsh2018.azurewebsites.net/Website/BuildSchool/BuildSchool.html" target="_blank">
+                                            <a href="img/buildsh2018.png" class="gallery-img">
                                                 <i class="fa fa-search"></i>
                                             </a>
-                                            <a href="img/buildschool.jpg" class="gallery-img">
+                                            <a href="https://buildsh2018.azurewebsites.net/Website/BuildSchool/BuildSchool.html" target="_blank">
                                                 <i class="fa fa-link"></i>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="single_portfolio_text">
-                                        <h3>Our Work Image 06</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <div>
+                                        <h3 class="capitalize">BuildSchool網站</h3>
+                                        <p>刻板練習加入幻燈片效果</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 mix cat2 cat4">
+                            <div class="col-md-4 mix cat1">
                                 <div class="single_mixi_portfolio center">
                                     <div class="single_portfolio_img">
                                         <img src="img/Shrimp_skin.jpg" alt="" />
                                         <div class="mixi_portfolio_overlay">
-                                            <a href="https://buildsh2018.azurewebsites.net/Website/蝦皮.html">
+                                            <a href="img/shrimp.png" class="gallery-img">
                                                 <i class="fa fa-search"></i>
                                             </a>
-                                            <a href="img/pf3.jpg" class="gallery-img">
+                                            <a href="https://buildsh2018.azurewebsites.net/Website/蝦皮.html" target="_blank">
                                                 <i class="fa fa-link"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="single_portfolio_text">
-                                        <h3>Our Work Image 06</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <h3>蝦皮網站</h3>
+                                        <p>刻板練習多種icon應用</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 mix cat2 cat3">
+                            <div class="col-md-4 mix cat3">
                                 <div class="single_mixi_portfolio center">
                                     <div class="single_portfolio_img">
                                         <img src="img/Gophers.jpg" alt="" />
                                         <div class="mixi_portfolio_overlay">
-                                            <a href="https://buildsh2018.azurewebsites.net/JQuery/打地鼠.html">
+
+                                            <a href="img/Gophers.jpg" class="gallery-img">
                                                 <i class="fa fa-search"></i>
                                             </a>
-                                            <a href="img/pf4.jpg" class="gallery-img">
+                                            <a href="https://buildsh2018.azurewebsites.net/JQuery/打地鼠.html" target="_blank">
                                                 <i class="fa fa-link"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="single_portfolio_text">
-                                        <h3>Our Work Image 06</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <h3>打地鼠</h3>
+                                        <p>CSS偽元素After,Before的應用</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 mix cat3 cat4">
-                                <div class="single_mixi_portfolio center">
-                                    <div class="single_portfolio_img">
-                                        <img src="img/MeatballNews.jpg" alt="" />
-                                        <div class="mixi_portfolio_overlay">
-                                            <a href="https://buildsh2018.azurewebsites.net/Website/肉球新聞/index.html">
-                                                <i class="fa fa-search"></i>
-                                            </a>
-                                            <a href="img/pf5.jpg" class="gallery-img">
-                                                <i class="fa fa-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="single_portfolio_text">
-                                        <h3>Our Work Image 06</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mix cat1 cat3">
+                            <div class="col-md-4 mix cat3">
                                 <div class="single_mixi_portfolio center">
                                     <div class="single_portfolio_img">
                                         <img src="img/Googleapi.jpg" alt="" />
                                         <div class="mixi_portfolio_overlay">
-                                            <a href="https://buildsh2018.azurewebsites.net/API/GoogleMap.html">
+                                            <a href="img/pf6.jpg" class="gallery-img">
                                                 <i class="fa fa-search"></i>
                                             </a>
-                                            <a href="img/pf6.jpg" class="gallery-img">
+                                            <a href="https://buildsh2018.azurewebsites.net/API/GoogleMap.html" target="_blank">
+                                                <i class="fa fa-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="capitalize">GoogleAPI</h3>
+                                        <p>連通GoogleMapAPI去抓取兩端路徑的聯繫</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mix cat1">
+                                <div class="single_mixi_portfolio center">
+                                    <div class="single_portfolio_img">
+                                        <img src="img/MeatballNews.jpg" alt="" />
+                                        <div class="mixi_portfolio_overlay">
+                                            <a href="img/Meatball.png" class="gallery-img">
+                                                <i class="fa fa-search"></i>
+                                            </a>
+                                            <a href="https://buildsh2018.azurewebsites.net/Website/肉球新聞/index.html" target="_blank">
                                                 <i class="fa fa-link"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="single_portfolio_text">
-                                        <h3>Our Work Image 06</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <h3>肉球新聞</h3>
+                                        <p>Navbar,col練習</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4 mix cat1 cat3">
                                 <div class="single_mixi_portfolio center">
                                     <div class="single_portfolio_img">
-                                        <img src="img/ultimate_password.jpg" alt="" />
+                                        <img src="img/day.jpg" alt="" />
                                         <div class="mixi_portfolio_overlay">
-                                            <a href="https://buildsh2018.azurewebsites.net">
+                                            <a href="img/day.jpg" class="gallery-img">
                                                 <i class="fa fa-search"></i>
                                             </a>
-                                            <a href="img/pf6.jpg" class="gallery-img">
+                                            <a href="https://buildsh2018.azurewebsites.net/JavaScript/行事曆.html" target="_blank">
                                                 <i class="fa fa-link"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="single_portfolio_text">
-                                        <h3>Our Work Image 06</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <h3>行事曆</h3>
+                                        <p>Localstorage與JSON的應用</p>
                                     </div>
                                 </div>
                             </div>
@@ -884,17 +888,17 @@
                                     <div class="single_portfolio_img">
                                         <img src="img/Mary.jpg" alt="" />
                                         <div class="mixi_portfolio_overlay">
-                                            <a href="https://buildsh2018.azurewebsites.net/JQuery/小瑪莉.html">
+                                            <a href="img/Mary.jpg" class="gallery-img">
                                                 <i class="fa fa-search"></i>
                                             </a>
-                                            <a href="img/pf6.jpg" class="gallery-img">
+                                            <a href="https://buildsh2018.azurewebsites.net/JQuery/小瑪莉.html" target="_blank">
                                                 <i class="fa fa-link"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="single_portfolio_text">
-                                        <h3>Our Work Image 06</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <h3>小瑪莉</h3>
+                                        <p>利用Sadow和SetTimeout製造旋轉的效果</p>
                                     </div>
                                 </div>
                             </div>
@@ -903,17 +907,17 @@
                                     <div class="single_portfolio_img">
                                         <img src="img/1A2B.jpg" alt="" />
                                         <div class="mixi_portfolio_overlay">
-                                            <a href="https://buildsh2018.azurewebsites.net/JavaScript/1A2B.html">
+                                            <a href="img/1A2B.jpg" class="gallery-img">
                                                 <i class="fa fa-search"></i>
                                             </a>
-                                            <a href="img/pf6.jpg" class="gallery-img">
+                                            <a href="https://buildsh2018.azurewebsites.net/JavaScript/1A2B.html" target="_blank">
                                                 <i class="fa fa-link"></i>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="single_portfolio_text">
-                                        <h3>Our Work Image 06</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                    <div>
+                                        <h3 style="text-transform: capitalize">1A2B</h3>
+                                        <p>JavaScript練習</p>
                                     </div>
                                 </div>
                             </div>
@@ -930,7 +934,7 @@
 
 
 
-    <section id="works" class="works">
+    <!-- <section id="works" class="works">
         <div class="container">
             <div class="row">
                 <div class="main_works_area center m-y-3">
@@ -964,7 +968,7 @@
             </div>
         </div>
         <hr />
-    </section>
+    </section> -->
     <!-- End of works Section -->
 
 
@@ -972,21 +976,9 @@
         <div class="container">
             <div class="row">
                 <div class="main_newsletter white-text p-y-2 m-t-3">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="single_newsletter left m-t-1 text-md-left text-sm-center text-xs-center wow zoomIn">
-                            <p>Subscribe to our newsletter to get every Notify</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="single_newsletter text-md-right text-sm-center wow zoomIn">
-                            <div class="md-form input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                                    <button class="btn waves-effect waves-red" type="button">
-                                        <i class="fa fa-send"></i>
-                                    </button>
-                                </span>
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="single_newsletter center m-t-1 text-md-center text-sm-center text-xs-center wow zoomIn">
+                            <p>Junior Software Engineer</p>
                         </div>
                     </div>
                 </div>
@@ -1003,75 +995,59 @@
                 <div class="main_footer_area white-text p-b-3">
                     <div class="col-md-3">
                         <div class="single_f_widget p-t-3 wow fadeInUp">
-                            <img src="img/logo.png" alt="" />
-                            <div class="single_f_widget_text">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of
-                                    a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                                    normal.
+                            <h4 style="text-transform: capitalize">About Me</h4>
+                            <div class="single_f_widget_text" style="padding-left:0px">
+                                <p style="margin-bottom:0px">Finding and solving problems makes me have the sense of accomplishment.</p>
+                                <p style="margin: 0 0">
+                                    I can both enjoy this two things in the world of programming languages. Therefore, I’m willing to devote my effort on program
+                                    development.
                                 </p>
-                                <div class="socail_f_widget">
-                                    <a href="#!">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                    <a href="#!">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                    <a href="#!">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                    <a href="#!">
-                                        <i class="fa fa-vimeo"></i>
-                                    </a>
-                                    <a href="#!">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" style="padding-left: 45px;">
                         <div class="single_f_widget m-t-3 wow fadeInUp">
-                            <h4 class="text-lowercase">Some features</h4>
-                            <div class="single_f_widget_text f_reatures">
+                            <h4 style="text-transform: capitalize">Some works</h4>
+                            <div class="single_f_widget_text f_reatures" style="padding-left: 0px">
                                 <ul>
                                     <li>
-                                        <i class="fa fa-check"></i>Lorem ipsum dolor sit amet</li>
+                                        <i class="fa fa-check"></i>Monopoly</li>
                                     <li>
-                                        <i class="fa fa-check"></i>Aliquam tincidunt cons ectetuer</li>
+                                        <i class="fa fa-check"></i>BuildSchool Website</li>
                                     <li>
-                                        <i class="fa fa-check"></i>Vestibulum auctor dapibus con</li>
+                                        <i class="fa fa-check"></i>Shopee Website</li>
                                     <li>
-                                        <i class="fa fa-check"></i>Lorem ipsum dolor sit amet auctor dapibus</li>
+                                        <i class="fa fa-check"></i>Calendar</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="single_f_widget m-t-3 wow fadeInUp">
-                            <h4 class="text-lowercase">Tags</h4>
-                            <div class="single_f_widget_text f_tags">
-                                <a href="#!">corporate</a>
-                                <a href="#!">agency</a>
-                                <a href="#!">portfolio</a>
-                                <a href="#!">blog</a>
-                                <a href="#!">elegant</a>
-                                <a href="#!">professional</a>
-                                <a href="#!">business</a>
+                            <h4 style="text-transform: capitalize">Tags</h4>
+                            <div class="single_f_widget_text f_tags" style="padding-left:0px">
+                                <a href="#!">CSS</a>
+                                <a href="#!">HTML</a>
+                                <a href="#!">Bootstrap</a>
+                                <a href="#!">JavaScript</a>
+                                <a href="#!">JQuery</a>
+                                <a href="#!">C#</a>
+                                <a href="#!">TypeScript</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="single_f_widget m-t-3 wow fadeInUp">
-                            <h4 class="text-lowercase">Flicker Posts</h4>
-                            <div class="single_f_widget_text f_flicker">
-                                <img src="img/flipcker1.jpg" alt="" />
-                                <img src="img/flipcker2.jpg" alt="" />
-                                <img src="img/flipcker3.jpg" alt="" />
-                                <img src="img/flipcker4.jpg" alt="" />
-                                <img src="img/flipcker3.jpg" alt="" />
-                                <img src="img/flipcker2.jpg" alt="" />
-                                <img src="img/flipcker4.jpg" alt="" />
-                                <img src="img/flipcker1.jpg" alt="" />
+                            <h4 style="text-transform: capitalize">Works Photo</h4>
+                            <div class="single_f_widget_text f_flicker" style="padding-left:0px">
+                                <img src="img/Monopoly.jpg" alt="" />
+                                <img src="img/buildschool.jpg" alt="" />
+                                <img src="img/Shrimp_skin.jpg" alt="" />
+                                <img src="img/Gophers.jpg" alt="" />
+                                <img src="img/Googleapi.jpg" alt="" />
+                                <img src="img/MeatballNews.jpg" alt="" />
+                                <img src="img/1A2B.jpg" alt="" />
+                                <img src="img/Mary.jpg" alt="" />
                             </div>
                         </div>
                     </div>
@@ -1083,34 +1059,9 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
                         <div class="copyright_text m-t-2 text-xs-center">
-                            <p class="wow zoomIn" data-wow-duration="1s">Made with
-                                <i class="fa fa-heart"></i> by
-                                <a target="_black" href="http://bootstrapthemes.co"> Bootstrap Themes</a> 2016. All Rights Reserved</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="socail_coppyright text-sm-right m-t-2 text-xs-center wow zoomIn">
-                            <a href="#!">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="#!">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a href="#!">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                            <a href="#!">
-                                <i class="fa fa-rss"></i>
-                            </a>
-                            <a href="#!">
-                                <i class="fa fa-vimeo"></i>
-                            </a>
-                            <a href="#!">
-                                <i class="fa fa-pinterest"></i>
-                            </a>
-                            <a href="#!">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
+                            <p class="wow zoomIn" data-wow-duration="1s">CHUN TSE Wang by Build School&nbsp;&nbsp;
+                                <i class="fa fa-heart"></i>
+                                <!-- <a target="_black" href="http://bootstrapthemes.co"> Bootstrap Themes</a> 2016. All Rights Reserved</p> -->
                         </div>
                     </div>
                 </div>
